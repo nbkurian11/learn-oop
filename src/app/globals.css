@@ -67,3 +67,21 @@ body {
 .btn-primary:hover {
     background-color: var(--color-primary-hover);
 }
+
+.module-card {
+  display: block;
+  padding: 20px 24px;
+  margin-bottom: 12px;
+  background-color: bisque;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #111111;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.module-card:hover {
+  background-color: orange;
+  border-color: var(--color-primary);
+}
