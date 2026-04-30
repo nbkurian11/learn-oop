@@ -8,6 +8,7 @@ export default async function LessonPage({ params }) {
     <main>
       <h1>Lesson {id}: {lesson.title}</h1>
       <p>{lesson.content}</p>
+      <pre><code>{lesson.code}</code></pre>
     </main>
   )
 }
