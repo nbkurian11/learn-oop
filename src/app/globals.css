@@ -85,3 +85,18 @@ body {
   background-color: orange;
   border-color: var(--color-primary);
 }
+
+.btn-back {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: greenyellow;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #111111;
+  font-size: 14px;
+}
+
+.btn-back:hover {
+  background-color: #e0e0e0;
+}
+
