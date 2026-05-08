@@ -2,7 +2,8 @@ import Link from "next/link"
 
 export default function Modules() {
 const modules = [
-  {number: 1, name: "Classes and Objects"}
+  {number: 1, name: "Classes and Objects"},
+  {number: 2, name: "Constructors and 'this' keyword"}
 ]
 return (
         <main className = "container">
