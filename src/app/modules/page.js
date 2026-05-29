@@ -1,22 +1,24 @@
 import Link from "next/link"
+import { getAllTopics } from "@/app/lib/topics"
 
 export default function Modules() {
-const modules = [
-  {number: 1, name: "Classes and Objects"},
-  {number: 2, name: "Constructors and 'this' keyword"}
-]
-return (
-        <main className = "container">
-            <h1>Modules</h1>
-            
-                {modules.map((topic) => {
-                    return (
-                        <Link key={topic.number} href={`/lessons/${topic.number}`} className="module-card">
-                            {topic.name}
-                        </Link>
-)
-                })}
-    
-        </main>
-    )
+  const topics = getAllTopics()
+
+  return (
+    <main className="container page-stack">
+      <div>
+        <h1>Modules</h1>
+        <p className="page-intro">Work through the core OOP concepts in a practical Java-first order.</p>
+      </div>
+
+      <div className="module-grid">
+        {topics.map((topic) => (
+          <Link key={topic.id} href={`/lessons/${topic.id}`} className="module-card">
+            <span className="module-number">Lesson {topic.id}</span>
+            <span>{topic.title}</span>
+          </Link>
+        ))}
+      </div>
+    </main>
+  )
 }

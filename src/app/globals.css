@@ -14,6 +14,10 @@ body {
   color: #111111;
 }
 
+a {
+  color: inherit;
+}
+
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -24,12 +28,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 24px;
 }
 
 .logo {
   font-size: 20px;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .hero {
@@ -55,6 +62,9 @@ body {
 }
 
 .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--color-primary);
   color: white;
   padding: 12px 28px;
@@ -62,17 +72,59 @@ body {
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .btn-primary:hover {
     background-color: var(--color-primary-hover);
 }
 
+.btn-secondary {
+  border: 1px solid #d4d4d4;
+  background: #ffffff;
+  border-radius: 8px;
+  color: #111111;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 10px 16px;
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.page-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 48px;
+  padding-bottom: 64px;
+}
+
+.page-stack h1 {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.page-intro {
+  color: #555555;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.module-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
 .module-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   padding: 20px 24px;
-  margin-bottom: 12px;
-  background-color: bisque;
+  background-color: #fff7ed;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   text-decoration: none;
@@ -82,14 +134,22 @@ body {
 }
 
 .module-card:hover {
-  background-color: orange;
+  background-color: #ffedd5;
   border-color: var(--color-primary);
+}
+
+.module-number,
+.lesson-kicker {
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .btn-back {
   display: inline-block;
   padding: 8px 16px;
-  background-color: greenyellow;
+  background-color: #f5f5f5;
   border-radius: 8px;
   text-decoration: none;
   color: #111111;
@@ -98,5 +158,158 @@ body {
 
 .btn-back:hover {
   background-color: #e0e0e0;
+}
+
+.lesson-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 32px;
+  padding-bottom: 72px;
+}
+
+.lesson-hero {
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 24px;
+}
+
+.lesson-hero h1 {
+  font-size: 44px;
+  line-height: 1.15;
+  margin-top: 8px;
+}
+
+.lesson-section {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.lesson-section h2 {
+  font-size: 24px;
+  margin-bottom: 14px;
+}
+
+.lesson-section p {
+  color: #333333;
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.quiz-list {
+  display: grid;
+  gap: 16px;
+}
+
+.quiz-card {
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 18px;
+}
+
+.quiz-card h3 {
+  font-size: 18px;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.quiz-options {
+  display: grid;
+  gap: 8px;
+}
+
+.quiz-option {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #dedede;
+  border-radius: 8px;
+  color: #111111;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  text-align: left;
+}
+
+.quiz-option span {
+  align-items: center;
+  background: #f1f1f1;
+  border-radius: 999px;
+  display: inline-flex;
+  flex: 0 0 28px;
+  font-weight: 700;
+  height: 28px;
+  justify-content: center;
+}
+
+.quiz-option:hover,
+.quiz-option.selected {
+  border-color: var(--color-primary);
+}
+
+.quiz-feedback {
+  border-radius: 8px;
+  margin-top: 12px;
+  padding: 12px;
+}
+
+.quiz-feedback.correct {
+  background: #ecfdf3;
+  color: #166534;
+}
+
+.quiz-feedback.incorrect {
+  background: #fff1f2;
+  color: #9f1239;
+}
+
+.practice-header {
+  align-items: flex-start;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.code-editor {
+  background: #111111;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  color: #f7f7f7;
+  font-family: "Consolas", "Monaco", monospace;
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 420px;
+  padding: 18px;
+  resize: vertical;
+  tab-size: 2;
+  width: 100%;
+}
+
+.code-editor:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.editor-note {
+  color: #666666;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+@media (max-width: 700px) {
+  .hero-title,
+  .lesson-hero h1 {
+    font-size: 34px;
+  }
+
+  .practice-header {
+    flex-direction: column;
+  }
+
+  .code-editor {
+    min-height: 360px;
+  }
 }
 
