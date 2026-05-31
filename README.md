@@ -1,11 +1,11 @@
 # LearnOOP 📚
 
-A free learning platform built for EECS 2030 students at York University to master Object Oriented Programming in Java.
+A free learning platform built for students at university to master Object Oriented Programming in Java.
 
 
 
 ## 💡 Why I Built This
-When I took OOP at York University, I struggled to grasp the core concepts. After finally mastering them, I wanted to build a resource that makes it easier for future students to learn the same material in a clear, structured way.
+When I took OOP, I struggled to grasp the core concepts. After finally mastering them, I wanted to build a resource that makes it easier for future students to learn the same material in a clear, structured way.
 
 ## 📖 What You'll Learn
 - Classes and Objects
