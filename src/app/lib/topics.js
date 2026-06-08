@@ -67,6 +67,19 @@ function parsePractice(practiceSource) {
   }
 }
 
+function parseList(source) {
+  return source
+    .split("\n")
+    .map((line) => line.trim())
+    .filter((line) => line.startsWith("- "))
+    .map((line) => line.replace(/^- /, ""))
+}
+
+function parseExpectedOutput(source) {
+  const codeMatch = source.match(/```text\n([\s\S]*?)\n```/)
+  return codeMatch ? codeMatch[1].trim() : source.trim()
+}
+
 export function getAllTopics() {
   return fs
     .readdirSync(topicsDirectory)
@@ -84,13 +97,19 @@ export function getTopicBySlug(slug) {
   const source = fs.readFileSync(fullPath, "utf8")
   const { metadata, body } = parseFrontmatter(source)
   const concept = getSection(body, "Concept")
+  const commonMistakes = parseList(getSection(body, "Common Mistakes"))
   const quiz = parseQuiz(getSection(body, "Quiz"))
   const practice = parsePractice(getSection(body, "Practice"))
+  const hints = parseList(getSection(body, "Hints"))
+  const expectedOutput = parseExpectedOutput(getSection(body, "Expected Output"))
 
   return {
     ...metadata,
     concept,
+    commonMistakes,
     quiz,
     practice,
+    hints,
+    expectedOutput,
   }
 }
