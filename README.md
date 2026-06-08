@@ -2,7 +2,7 @@
 
 A free learning platform built for students at university to master Object Oriented Programming in Java.
 
-#Live demo:
+Live demo:
 https://nbkurian11.github.io/learn-oop/
 
 
